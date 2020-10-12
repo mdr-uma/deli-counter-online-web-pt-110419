@@ -1,17 +1,14 @@
-# Write your code here.
-katz_deli = []
+require 'pry'
 
-def line(katz_deli)
-  array = [];
-  if katz_deli.empty?
-    puts "The line is currently empty."
+def line(customers)
+  if customers.empty?
+    puts 'The line is currently empty.'
   else
-    number = 1
-    katz_deli.each do |customer|
-      array << "#{number}. #{customer}"
-      number += 1
+    current_line = 'The line is currently:'
+    customers.each.with_index(1) do |person, i|
+      current_line << " #{i}. #{person}"
     end
-    puts "The line is currently: #{array.join(" ")}"
+    puts current_line
   end
 end
 
